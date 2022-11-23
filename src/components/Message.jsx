@@ -1,5 +1,5 @@
 import React from 'react'
-import Image from '../img/IMG20211012152223.jpg'
+import Image from "../img/imagem.jpg"
 
 function Message() {
     return (
@@ -10,7 +10,7 @@ function Message() {
             </div>
             <div className='messageContent'>
                 <p>Hello</p>
-                <img src={Image} />
+                <img src="https://images.unsplash.com/photo-1509644851169-2acc08aa25b5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=996&q=80" />
             </div>
         </div>
     )
