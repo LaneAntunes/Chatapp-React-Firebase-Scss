@@ -1,7 +1,12 @@
 import React from 'react'
 import "../style.scss"
 import avatarPic from "../img/addAvatar.png"
-import { useState, useNavigate } from "react"
+import { useState } from "react"
+import { useNavigate, Link } from "react-router-dom"
+// import { auth } from "../firebase";
+
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from '../firebase';
 
 function Login() {
     const [err, setErr] = useState(false)
@@ -15,6 +20,8 @@ function Login() {
         const password = e.target[1].value;
 
         try {
+            await signInWithEmailAndPassword(auth, email, password);
+            navigate('/login')
 
         } catch (err) {
             setErr(true)
@@ -33,8 +40,9 @@ function Login() {
                     <input type="password" placeholder='password'></input>
 
                     <button>Sign in</button>
+                    {err && <span> Something went wrong</span>}
                 </form>
-                <p>Do you have an account? Register</p>
+                <p>Do you have an account? <Link to="/register">Register </Link></p>
             </div>
         </div>
     )
