@@ -7,6 +7,8 @@ function Message() {
             <div className='messageInfo'>
                 <img src={Image} />
                 <span>just now</span>
+                <span>just now</span>
+                <span>just now</span>
             </div>
             <div className='messageContent'>
                 <p>Hello</p>
